@@ -1,5 +1,11 @@
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+
 def main():
-    print("Hello from asteroids!")
+    print(f"""
+Starting Asteroids!
+Screen width: {SCREEN_WIDTH}
+Screen height: {SCREEN_HEIGHT}
+          """)
 
 
 if __name__ == "__main__":
