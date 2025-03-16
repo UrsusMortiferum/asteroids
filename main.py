@@ -1,10 +1,10 @@
+import sys
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
-import sys
 
 def main():
     pygame.init()
@@ -43,6 +43,10 @@ Screen height: {SCREEN_HEIGHT}
         for asteroid in asteroids:
             if asteroid.collision_check(player):
                 sys.exit("Game Over!")
+            for shot in shots:
+                if asteroid.collision_check(shot):
+                    shot.kill()
+                    asteroid.kill()
 
         screen.fill("black")
 
