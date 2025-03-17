@@ -1,6 +1,8 @@
 import math
 import pygame
 
+from constants import PLAYER_COLOR
+
 
 class TriangleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
@@ -28,4 +30,4 @@ class TriangleShape(pygame.sprite.Sprite):
 
     def draw(self, screen):
         vertices = self.calculate_vertices()
-        pygame.draw.polygon(screen, PLAYER_COLOR, vertices)
+        pygame.draw.polygon(screen, PLAYER_COLOR, vertices, width=2)

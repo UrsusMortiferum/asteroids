@@ -1,10 +1,11 @@
 import sys
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import PLAYER_RADIUS, SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
+from triangleshape import TriangleShape
 
 
 def main():
@@ -25,6 +26,9 @@ def main():
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     Shot.containers = (shots, updatable, drawable)
+
+    TriangleShape.containers = (updatable, drawable)
+    triangle = TriangleShape(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
 
     dt = 0
 
