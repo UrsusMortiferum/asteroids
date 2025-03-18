@@ -1,15 +1,16 @@
 import sys
 import pygame
-from constants import PLAYER_RADIUS, SCREEN_WIDTH, SCREEN_HEIGHT
+from collisions import collision_check
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
-from triangleshape import TriangleShape
 
 
 def main():
     pygame.init()
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
 
@@ -43,10 +44,12 @@ Screen height: {SCREEN_HEIGHT}
         updatable.update(dt)
 
         for asteroid in asteroids:
-            if asteroid.collision_check(player):
+            # if asteroid.collision_check(player):
+            if collision_check(asteroid, player):
                 sys.exit("Game Over!")
             for shot in shots:
                 if asteroid.collision_check(shot):
+                    # if collision_check(asteroid, shot):
                     shot.kill()
                     asteroid.split()
 

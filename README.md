@@ -11,7 +11,7 @@ It's my second [Boot.dev](https://www.boot.dev) project!
 - [ ] Add a background image
 - [ ] Create different weapon types
 - [ ] Make the asteroids lumpy instead of perfectly round
-- [ ] Make the ship have a triangular hit box instead of a circular one
+- [x] Make the ship have a triangular hit box instead of a circular one
 - [ ] Add a shield power-up
 - [ ] Add a speed power-up
 - [ ] Add bombs that can be dropped
@@ -20,3 +20,4 @@ It's my second [Boot.dev](https://www.boot.dev) project!
 - [ ] Introduction pop-up explaining rules and controls
 - [ ] A way to change ship color
 - [ ] Different controls (support for HJKL and arrows)
+- [ ] Enemy triangles?
