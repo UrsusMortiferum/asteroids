@@ -27,9 +27,6 @@ def main():
 
     Shot.containers = (shots, updatable, drawable)
 
-    TriangleShape.containers = (updatable, drawable)
-    triangle = TriangleShape(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
-
     dt = 0
 
     print(f"""

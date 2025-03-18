@@ -38,7 +38,7 @@ class Player(TriangleShape):
         self.rotation += PLAYER_ROTATION_SPEED * dt * direction
 
     def move(self, dt, direction):
-        forward = pygame.Vector2(0, 1).rotate(self.rotation)
+        forward = pygame.Vector2(1, 0).rotate(self.rotation)
         self.position += forward * PLAYER_MOVE_SPEED * dt * direction
 
     def update(self, dt):

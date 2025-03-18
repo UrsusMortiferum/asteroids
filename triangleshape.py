@@ -17,15 +17,23 @@ class TriangleShape(pygame.sprite.Sprite):
         self.radius = radius
 
     def calculate_vertices(self):
-        angles = [0, 120, 240]
         vertices = []
-        for angle in angles:
+        front_angle = math.radians(0 + self.rotation)
+        front_vertex = self.position + pygame.Vector2(
+            math.cos(front_angle) * self.radius,
+            math.sin(front_angle) * self.radius,
+        )
+        vertices.append(front_vertex)
+
+        back_angles = [120, 240]
+        for angle in back_angles:
             radian_angle = math.radians(angle + self.rotation)
-            vertex = self.position + pygame.Vector2(
-                math.cos(radian_angle) * self.radius,
-                math.sin(radian_angle) * self.radius,
+            back_vertex = self.position + pygame.Vector2(
+                math.cos(radian_angle) * self.radius * 0.7,
+                math.sin(radian_angle) * self.radius * 0.7,
             )
-            vertices.append(vertex)
+            vertices.append(back_vertex)
+
         return vertices
 
     def draw(self, screen):
