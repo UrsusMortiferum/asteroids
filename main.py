@@ -48,8 +48,8 @@ Screen height: {SCREEN_HEIGHT}
             if collision_check(asteroid, player):
                 sys.exit("Game Over!")
             for shot in shots:
-                if asteroid.collision_check(shot):
-                    # if collision_check(asteroid, shot):
+                # if asteroid.collision_check(shot):
+                if collision_check(asteroid, shot):
                     shot.kill()
                     asteroid.split()
 
